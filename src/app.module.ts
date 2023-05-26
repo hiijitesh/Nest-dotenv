@@ -1,14 +1,12 @@
 import { Module } from '@nestjs/common';
-import { UsersModule } from './users/users.module';
-import { JobsModule } from './jobs/jobs.module';
 import { ConfigModule } from '@nestjs/config';
 import config from './config/config';
 import { AdminModule } from './admin/admin.module';
+import { RoutesModule } from './route.module';
 
 @Module({
   imports: [
-    JobsModule,
-    UsersModule,
+    RoutesModule,
     AdminModule,
     ConfigModule.forRoot({
       // envFilePath: ['.env', '.dev.env'], // Best Practise is use single env file
